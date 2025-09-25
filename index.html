@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohanarani - Resume</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f6f9; }
+    .container { width: 80%; margin: auto; background: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+    h1 { text-align: center; color: #2c3e50; }
+    h2 { border-bottom: 2px solid #2c3e50; color:#2c3e50; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #aaa; padding: 8px; }
+    th { background: #2c3e50; color:#fff; }
+    .footer { text-align: right; font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>L. Mohanarani</h1>
+    <p style="text-align:center;">
+      <b>Email:</b> <a href="#" id="contactemail">mohanarani0412@gmail.com</a> | 
+      <b>Phone:</b> <a href="#" id="Contactcall">+91-9894260412</a> 
+    </p>
+    <p style="text-align:center;"><b>Resume Viewed on:</b> <span id="todayDate"></span></p>
+    <hr>
+
+    <!-- Education Section -->
+    <h2 onclick="toggleSection('edu')">Education (click to toggle)</h2>
+    <div id="edu">
+      <table>
+        <tr><th>Qualification</th><th>Institute</th><th>Year</th><th>Percentage</th></tr>
+        <tr><td>B.Sc Computer Science</td><td>APC Mahalaxmi College,Thoothukudi</td><td>2022-2025</td><td>75%</td></tr>
+        <tr><td>HSC</td><td>Govt Hr Sec School,Sivagnanapuram</td><td>2022</td><td>71%</td></tr>
+        <tr><td>SSLC</td><td>Govt High School.Eppodumvendran</td><td>2020</td><td>76%</td></tr>
+      </table>
+    </div>
+
+    <!-- Skills Section -->
+    <h2 onclick="toggleSection('skills')">Technical Skills (click to toggle)</h2>
+    <div id="skills">
+      <ul>
+         <li>Text processor</li>
+        <li>Spreadsheet</li>
+        <li>HTML & CSS</li>
+        <li>JavaScript (Basic)</li>
+        <li>Python (Basic)</li>
+        <li>MySQL</li>
+        
+      </ul>
+    </div>
+
+    <!-- Projects Section -->
+    <h2 onclick="toggleSection('pro')">Projects (click to toggle)</h2>
+    <div id="pro">
+      <ul>
+        <li><b>Smart Stick for the Visually Impaired using IoT</b></li>
+        <li><b>Portfolio Website</b></li>
+      </ul>
+    </div>
+
+    <div class="footer">Mohanarani.L</div>
+  </div>
+
+  <script>
+    // 1. Show today's date
+    document.getElementById("todayDate").innerText = new Date().toDateString();
+
+    // 2. Toggle sections (Education, Skills, Projects)
+    function toggleSection(id) {
+      let section = document.getElementById(id);
+      if (section.style.display === "none") {
+        section.style.display = "block";
+      } else {
+        section.style.display = "none";
+      }
+    }
+
+    // 3. Contact alert
+    document.getElementById("contactemail").addEventListener("click", function() {
+      alert("You clicked contact! Email: mohanarani0412@gmail.com");
+    });
+    document.getElementById("Contactcall").addEventListener("click", function() {
+      alert("You clicked contact!Phone no: +91-9894260412");
+    });
+  </script>
+
+</body>
+</html>
