@@ -13,13 +13,14 @@
     th, td { border: 1px solid #aaa; padding: 8px; }
     th { background: #2c3e50; color:#fff; }
     .footer { text-align: right; font-weight: bold; margin-top: 20px; }
-    #projectImage {
+    #projectImage,#certificateImage {
       display: none;
       margin-top: 10px;
       max-width: 100%;
       border: 2px solid #2c3e50;
       border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);}
+      
     }
   </style>
 </head>
@@ -33,13 +34,13 @@
     </p>
     <p style="text-align:center;"><b>Resume Viewed on:</b> <span id="todayDate"></span></p>
     <hr>
-    <h2><b>Objective</b></h2>
+    <h2><b>About</b></h2>
     <p>Enthusiastic and determined Computer Science undergraduate with a passion for
 learning new technologies. Possess strong analytical skills, creativity, and a drive to
-contribute to impactful tech-driven solutions.</p>
+contribute to impactful tech-driven solutions.Currently enhancing my skills in front-end, I aim to create visually appealing and user-friendly websites. With a keen interest in continuous learning, I am eager to apply my knowledge to real-world projects and contribute to innovative web solutions</p>
 
-    <!-- Education Section -->
-    <h2 onclick="toggleSection('edu')">Education (click it)</h2>
+  
+  <h2 onclick="toggleSection('edu')">Education (click it)</h2>
     <div id="edu">
       <table>
         <tr><th>Qualification</th><th>Institute</th><th>Year</th><th>Percentage</th></tr>
@@ -62,28 +63,52 @@ contribute to impactful tech-driven solutions.</p>
         
       </ul>
     </div>
-
-    <!-- Projects Section -->
-    <h2 onclick="toggleSection('pro')">Projects (click it)</h2>
-    <div id="pro">
+    
+    <h2 onclick="toggleSection('certificate')">Ceritificate (click it)</h2>
+    <div id="certificate">
       <ul>
-      <li>  <b><a href="#" onclick="showProjectImage()">Smart Stick for the Visually Impaired using IoT</a></b>
-        </li>
-        <li><b><a href="https://mohana0412.github.io/Mona/">Portfolio Website</a></b></li>
+      <li>  <a href="#"onclick="showCertificateImage(certificateImage)">Short Term Program in Multimedia and Webdesign from Bharathidasan University
+      n</a></li>
+       
+
+       
+        
       </ul>
     </div>
+    <img id="certificateImage" src="webdesign.jpg" alt="webdesign certificateImage"width="250"height="350">
+    <!-- Projects Section -->
+    <h2 onclick="toggleSection('pro')">Projects (click it)</h2>
+    
+   <div id="pro">
+      <ul>
+      <li>  <a href="#" onclick="showProjectImage()">Smart Stick for the Visually Impaired using IoT</a>
+        </li>
+        <li><a href="https://mohana0412.github.io/Mona/">Portfolio Website</a></li>
+      </ul>
+    </div>
+    
     <!-- Image that shows when Smart Stick is clicked -->
 <img id="projectImage" src="Smart stick.jpg" alt="Smart Stick Project Image" width="150"
 height="250">
 
-    <div class="footer">Mohanarani.L</div>
+
+<h2 onclick="toggleSection('achives')">Key Achivements (click it)</h2>
+    <div id="achives">
+      <ul>
+         <li>Outstanding Performance, Talent Examination, Shakespeare Publication (2024)</li>
+        <li>Co-authored a short story published in Soch Publication (2024), appreciated by Indore Samachar Newspaper
+</li>
+        <li>Participated in National Level AI Seminar, April 4, 2024</li>
+</ul>
+    </div>
+<div class="footer">Mohanarani.L</div>
   </div>
 
   <script>
     // 1. Show today's date
     document.getElementById("todayDate").innerText = new Date().toDateString();
 
-    // 2. Toggle sections (Education, Skills, Projects)
+    // 2. Toggle sections (Education, Skills, Projects,certificate)
     function toggleSection(id) {
       let section = document.getElementById(id);
       if (section.style.display === "none") {
@@ -100,11 +125,19 @@ height="250">
     document.getElementById("Contactcall").addEventListener("click", function() {
       alert("You clicked contact!Phone no: +91-9894260412");
     });
+    function showCertificateImage(certificateImage) {
+      const img = document.getElementById("certificateImage");
+      img.style.display = (img.style.display === "none" || img.style.display === "") 
+        ? "block" : "none";
+    }
     function showProjectImage() {
       const img = document.getElementById("projectImage");
       img.style.display = (img.style.display === "none" || img.style.display === "") 
         ? "block" : "none";
     }
+    
+    
+    
   </script>
 
 </body>
