@@ -13,6 +13,14 @@
     th, td { border: 1px solid #aaa; padding: 8px; }
     th { background: #2c3e50; color:#fff; }
     .footer { text-align: right; font-weight: bold; margin-top: 20px; }
+    #projectImage {
+      display: none;
+      margin-top: 10px;
+      max-width: 100%;
+      border: 2px solid #2c3e50;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
@@ -25,6 +33,10 @@
     </p>
     <p style="text-align:center;"><b>Resume Viewed on:</b> <span id="todayDate"></span></p>
     <hr>
+    <h2><b>Objective</b></h2>
+    <p>Enthusiastic and determined Computer Science undergraduate with a passion for
+learning new technologies. Possess strong analytical skills, creativity, and a drive to
+contribute to impactful tech-driven solutions.</p>
 
     <!-- Education Section -->
     <h2 onclick="toggleSection('edu')">Education (click it)</h2>
@@ -55,10 +67,14 @@
     <h2 onclick="toggleSection('pro')">Projects (click it)</h2>
     <div id="pro">
       <ul>
-        <li><b>Smart Stick for the Visually Impaired using IoT</b></li>
+      <li>  <b><a href="#" onclick="showProjectImage()">Smart Stick for the Visually Impaired using IoT</a></b>
+        </li>
         <li><b><a href="https://mohana0412.github.io/Mona/">Portfolio Website</a></b></li>
       </ul>
     </div>
+    <!-- Image that shows when Smart Stick is clicked -->
+<img id="projectImage" src="Smart stick.jpg" alt="Smart Stick Project Image" width="150"
+height="250">
 
     <div class="footer">Mohanarani.L</div>
   </div>
@@ -84,6 +100,11 @@
     document.getElementById("Contactcall").addEventListener("click", function() {
       alert("You clicked contact!Phone no: +91-9894260412");
     });
+    function showProjectImage() {
+      const img = document.getElementById("projectImage");
+      img.style.display = (img.style.display === "none" || img.style.display === "") 
+        ? "block" : "none";
+    }
   </script>
 
 </body>
